@@ -28,6 +28,7 @@ header {
     flex-wrap: wrap;
     margin-left: 193px;
     margin-top: 35px;
+    perspective: 1000px;
 
 }
 
@@ -35,13 +36,14 @@ header {
     width: 117px;
     height: 146px;
     position: relative;
-    background-color: #A7E9AF;
     border: 1px solid #99CEA8;
+    background-color: #A7E9AF;
     border-radius: 5px;
-    padding-top: 17px;
-    padding-left: 8px;
     margin: 10px;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: all 1s;
+    cursor: pointer;
 }
 
 .memory-card:active{
@@ -49,11 +51,19 @@ header {
     transition: transform .2s;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.memory-card.flip {
+    transform: rotateY(180deg);
 }
 
-.front-face, .back-face {
+.back-face, .front-face {
     position: absolute;
+    top: 20px;
+    left: 8px;
+    width: 100px;
+    height: 100px;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
 }
