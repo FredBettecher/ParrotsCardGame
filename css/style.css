@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #EEF9BF;
+}
+
+header {
+    font-size: 56px;
+    font-weight: bold;
+    color: #75B79E;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 110px;
+}
