@@ -40,16 +40,20 @@ function flipCard(card){
         lockGame = false;
         cardOne = null;
         cardTwo = null;
-    } else{
+        if (turnedPairs === qtdOfCards / 2) {
+            alert("Parabêns! Você ganhou o jogo com " + count + " jogadas.");
+          }
+          
+    } else {
         lockGame = true;
         setTimeout(() => {
-        cardOne.classList.remove('flip');
-        cardTwo.classList.remove('flip');
-        lockGame = false;
-        cardFlipped = false;
-        lockGame = false;
-        cardOne = null;
-        cardTwo = null;
+            cardOne.classList.remove('flip');
+            cardTwo.classList.remove('flip');
+            lockGame = false;
+            cardFlipped = false;
+            lockGame = false;
+            cardOne = null;
+            cardTwo = null;
         }, 1000);
     }
 }
@@ -65,7 +69,7 @@ function mixCards(){
 // função que seleciona o número de cartas
 function quantityOfCards(){
     while((qtdOfCards < 4 || qtdOfCards > 14) || (qtdOfCards % 2 !== 0)){
-        qtdOfCards = prompt("Escolhar um número par de cartas entre 4 e 14");
+        qtdOfCards = prompt("Escolha um número par de cartas entre 4 e 14");
     }
 
     if((qtdOfCards >= 4 || qtdOfCards <= 14) || (qtdOfCards % 2 === 0)){
@@ -75,18 +79,10 @@ function quantityOfCards(){
     }
 }
 
-function endGame(){
-    if((turnedPairs*2) === qtdOfCards){
-        alert(`Você ganhou em ${count} jogadas!`);
-        console.log(`Você ganhou em ${count} jogadas!`);
-        }
-}
 
-// função que avisa quando o jogo termina
 function main(){
     mixCards();
     quantityOfCards();
-    endGame();
 }
 
 main();
